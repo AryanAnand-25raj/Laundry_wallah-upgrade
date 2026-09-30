@@ -1,209 +1,1160 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Laundry Wallah</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Laundry Wallah - Premium garment care, eco-friendly dry cleaning, steam pressing, and doorstep laundry service. Express 24-hour delivery, zero effort, 100% fabric care guarantee.">
+  <meta name="keywords" content="laundry service, dry cleaning, steam pressing, shoe spa, wash and fold, doorstep laundry, express laundry India">
+  <meta name="author" content="Laundry Wallah Garment Care">
+  
+  <title>Laundry Wallah™ — Premium Garment Care, Dry Cleaning & Doorstep Laundry</title>
+
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5.3.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body data-bs-spy="scroll" data-bs-target="#main-navbar" data-bs-offset="100" tabindex="0">
 
-    <!-- NAVBAR -->
-    <nav>
-        <div class="nav-logo">Laundry Wallah</div>
-        <ul class="nav-links">
-            <li><a href="#">Home</a></li>
-            <li><a href="#booking">Services</a></li>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Contact Us</a></li>
+  <!-- =========================================================================
+       1. Top Announcement Strip
+       ========================================================================= -->
+  <div class="top-notice-bar d-none d-md-block">
+    <div class="container d-flex justify-content-between align-items-center">
+      <div class="d-flex align-items-center gap-2">
+        <span class="badge-promo"><i class="bi bi-tag-fill me-1"></i> SPECIAL OFFER</span>
+        <span>Get <strong>20% OFF</strong> your first order with coupon <code>FIRSTWASH</code></span>
+      </div>
+      <div class="d-flex align-items-center gap-4 text-light">
+        <span><i class="bi bi-geo-alt-fill text-primary me-1"></i> Serving Delhi NCR, Mumbai, Bengaluru, Pune & Hyderabad</span>
+        <span><i class="bi bi-telephone-fill text-primary me-1"></i> <a href="tel:+919876543210" class="text-light text-decoration-none">+91 98765 43210</a></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       2. Sticky Main Navigation
+       ========================================================================= -->
+  <nav class="navbar navbar-expand-lg lw-navbar sticky-top" id="main-navbar">
+    <div class="container">
+      <!-- Brand Logo -->
+      <a class="navbar-brand brand-logo" href="#">
+        <div class="brand-icon-box">
+          <i class="bi bi-water"></i>
+        </div>
+        <div>
+          <span>Laundry <span class="brand-highlight">Wallah</span></span>
+          <span class="brand-tag">Premium Garment Care</span>
+        </div>
+      </a>
+
+      <!-- Header Action Group for Mobile -->
+      <div class="d-flex align-items-center gap-2 d-lg-none">
+        <button class="btn btn-outline-primary btn-sm rounded-pill px-3" data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas" aria-controls="cartOffcanvas">
+          <i class="bi bi-bag"></i> <span id="mobile-cart-count">0</span>
+        </button>
+        <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+
+      <!-- Navigation Links -->
+      <div class="collapse navbar-collapse" id="navbarContent">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link lw-nav-link" href="#hero">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link lw-nav-link" href="#services">Services & Rates</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link lw-nav-link" href="#calculator">Weight Estimator</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link lw-nav-link" href="#how-it-works">How It Works</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link lw-nav-link" href="#tracking">Track Order</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link lw-nav-link" href="#faq">FAQ</a>
+          </li>
         </ul>
-        <div class="User">Username</div>
-    </nav>
 
-    <!-- HERO -->
-    <section class="hero">
-        <div class="hero-left">
-            <h1>Premium Laundry Services <span>for easy convenience!</span></h1>
-            <h2>Laundry Wallah!</h2>
-            <p>We provide premium laundry services at your doorstep.
-            Fresh Clothes. Zero Effort. Wash • Dry • Fold • Relax.</p>
-            <a class="btn-book" href="#booking">Book A Service Today! 🧺</a>
+        <!-- Desktop Action Buttons -->
+        <div class="d-none d-lg-flex align-items-center gap-3">
+          <button class="cart-nav-btn" data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas" aria-controls="cartOffcanvas" id="btn-open-cart">
+            <i class="bi bi-bag-check-fill text-primary fs-5"></i>
+            <span>Bag</span>
+            <span class="cart-counter-badge" id="cart-count-nav">0</span>
+            <span class="text-muted fw-bold small ms-1" id="cart-subtotal-nav">₹0</span>
+          </button>
+          <a href="#booking" class="btn btn-lw-primary">
+            <i class="bi bi-calendar2-check"></i> Book Pickup
+          </a>
         </div>
-        <div class="hero-right">  <!-- ✅ moved outside hero-left -->
-            <img src="laundry-image.jpg"
-                alt="Laundry Service"
-                style="width:380px; height:320px; object-fit:cover; border-radius:24px;">
-        </div>
-    </section>
+      </div>
+    </div>
+  </nav>
 
-    <!-- ACHIEVEMENTS -->
-    <section class="achievements">
-        <div class="achievements-inner">  
-            <h2>Our Achievements</h2>
-            <div class="achievement-stats">
-                <div class="stat">
-                    <div class="stat-number">15+</div>
-                    <div class="stat-label">Laundry Services</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-number">240+</div>
-                    <div class="stat-label">Happy Customers</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-number">5+ Yrs</div>
-                    <div class="stat-label">Experience</div>
-                </div>
+  <!-- =========================================================================
+       3. Hero Section
+       ========================================================================= -->
+  <section class="hero-section" id="hero">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <!-- Left Content Column -->
+        <div class="col-lg-6">
+          <div class="d-inline-flex align-items-center gap-2 badge-lw-pill badge-lw-blue mb-3">
+            <i class="bi bi-stars"></i>
+            <span>Next-Generation Laundry & Dry Cleaning</span>
+          </div>
+
+          <h1 class="hero-title">
+            Fresh, Spotless Clothes. <br>
+            <span class="gradient-text">Zero Effort.</span> Delivered to Door.
+          </h1>
+
+          <p class="hero-subtitle">
+            Experience high-grade German laundry technology, chemical-free hydro-solvents, and precision steam pressing. Free pickup & delivery right at your convenience.
+          </p>
+
+          <!-- Key Value Proposition Pills -->
+          <div class="hero-pills">
+            <div class="pill-item">
+              <i class="bi bi-lightning-charge-fill"></i>
+              <span>24hr Express Available</span>
             </div>
-        </div>
-    </section>
-
-    <!-- BOOKING -->
-    <section id="booking">
-        <div class="services-panel">
-            <h2>Our Services</h2>
-            <p>Click On The Add To Cart Button To Add The Services To Your Cart</p>
-            <div id="services-list">
-                <div class="service-item">
-                    <div class="service-info">👔 Dry Cleaning <span class="service-price">₹200.00</span></div>
-                    <button class="btn-add" onclick="toggleService(this, 'Dry Cleaning', 200)">Add Item </button>
-                </div>
-                <div class="service-item">
-                    <div class="service-info">🧺 Wash &amp; Fold <span class="service-price">₹100.00</span></div>
-                    <button class="btn-add" onclick="toggleService(this, 'Wash & Fold', 100)">Add Item </button>
-                </div>
-                <div class="service-item">
-                    <div class="service-info">🧲 Ironing <span class="service-price">₹30.00</span></div>
-                    <button class="btn-add" onclick="toggleService(this, 'Ironing', 30)">Add Item </button>
-                </div>
-                <div class="service-item">
-                    <div class="service-info">🧴 Stain Removal <span class="service-price">₹500.00</span></div>
-                    <button class="btn-add" onclick="toggleService(this, 'Stain Removal', 500)">Add Item </button>
-                </div>
-                <div class="service-item">
-                    <div class="service-info">🧥 Leather &amp; Dry Cleaning <span class="service-price">₹999.00</span></div>
-                    <button class="btn-add" onclick="toggleService(this, 'Leather & Suede Cleaning', 999)">Add Item </button>
-                </div>
-                <div class="service-item">
-                    <div class="service-info">👗 Wedding Dress Cleaning <span class="service-price">₹2800.00</span></div>
-                    <button class="btn-add" onclick="toggleService(this, 'Wedding Dress Cleaning', 2800)">Add Item</button>
-                </div>
+            <div class="pill-item">
+              <i class="bi bi-shield-check"></i>
+              <span>Fabric Care Guarantee</span>
             </div>
-            <div class="services-footer"> Add the items to the cart and book now</div>
+            <div class="pill-item">
+              <i class="bi bi-truck"></i>
+              <span>Free Doorstep Pickup > ₹299</span>
+            </div>
+            <div class="pill-item">
+              <i class="bi bi-leaf-fill"></i>
+              <span>100% Eco-Safe Detergents</span>
+            </div>
+          </div>
+
+          <!-- CTA Buttons -->
+          <div class="d-flex flex-wrap gap-3">
+            <a href="#booking" class="btn btn-lw-primary btn-lg">
+              <i class="bi bi-basket3-fill"></i> Schedule Pickup Now
+            </a>
+            <a href="#services" class="btn btn-lw-secondary btn-lg">
+              <i class="bi bi-card-checklist"></i> View Rate Card
+            </a>
+            <a href="#calculator" class="btn btn-lw-outline btn-lg">
+              <i class="bi bi-calculator"></i> Bulk Wash Calc
+            </a>
+          </div>
+
+          <!-- Real-world Metrics Banner -->
+          <div class="hero-stats-banner">
+            <div class="stat-block">
+              <div class="stat-number">50k+</div>
+              <div class="stat-label">Clothes Cleaned</div>
+            </div>
+            <div class="stat-block">
+              <div class="stat-number">4.9★</div>
+              <div class="stat-label">Customer Rating</div>
+            </div>
+            <div class="stat-block">
+              <div class="stat-number">45m</div>
+              <div class="stat-label">Avg Pickup Response</div>
+            </div>
+          </div>
         </div>
 
-        <div class="cart-panel">
-            <div class="cart-box">
-                <h3>Added Items</h3>
-                <table class="cart-table">
-                    <thead>
-                        <tr>
-                            <th>S.No</th>
-                            <th>Service Name</th>
-                            <th style="text-align:right">Price</th>
-                        </tr>
-                    </thead>
-                    <tbody id="cart-body">
-                        <tr><td colspan="3" class="cart-empty">No items added yet</td></tr>
-                    </tbody>
-                </table>
-                <div class="total-row">
-                    <span>Total Amount</span>
-                    <span class="total-amount" id="total">₹0.00</span>
-                </div>
+        <!-- Right Visual Showcase -->
+        <div class="col-lg-6">
+          <div class="hero-media-wrapper">
+            <div class="hero-img-card">
+              <img src="assets/hero-banner.jpg" alt="Laundry Wallah Commercial Washing and Garment Care Studio" class="img-fluid" loading="eager">
             </div>
 
-            <div class="booking-box">
-                <h3>Book Now</h3>
-                <div class="form-group" style="margin-bottom:12px">
-                    <label>Full Name</label>
-                    <input type="text" id="fullname" placeholder="Username" required>
+            <!-- Floating Glass Badges -->
+            <div class="floating-badge badge-top-left">
+              <div class="badge-icon success-icon">
+                <i class="bi bi-check-circle-fill"></i>
+              </div>
+              <div class="badge-text">
+                <h6>Ozone Sanitized</h6>
+                <small>99.9% Bacteria & Odor Removal</small>
+              </div>
+            </div>
+
+            <div class="floating-badge badge-bottom-right">
+              <div class="badge-icon blue-icon">
+                <i class="bi bi-scooter"></i>
+              </div>
+              <div class="badge-text">
+                <h6>Doorstep Valet Active</h6>
+                <small>Pickups happening across 18+ zones</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       4. Trust & Service Highlights Bar
+       ========================================================================= -->
+  <section class="trust-strip">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-6 col-md-3">
+          <div class="trust-item">
+            <div class="trust-icon-box">
+              <i class="bi bi-basket"></i>
+            </div>
+            <div class="trust-text">
+              <h6>Never Mixed</h6>
+              <p>Each customer order washed separately in dedicated drums.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="trust-item">
+            <div class="trust-icon-box">
+              <i class="bi bi-droplet-half"></i>
+            </div>
+            <div class="trust-text">
+              <h6>Gentle On Fabric</h6>
+              <p>pH neutral organic soaps preserving colors and fibers.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="trust-item">
+            <div class="trust-icon-box">
+              <i class="bi bi-steam"></i>
+            </div>
+            <div class="trust-text">
+              <h6>Vacuum Steam Press</h6>
+              <p>Hospitality grade steam finishing on specialized hangers.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="trust-item">
+            <div class="trust-icon-box">
+              <i class="bi bi-shield-lock"></i>
+            </div>
+            <div class="trust-text">
+              <h6>100% Care Assurance</h6>
+              <p>Zero color-bleeding or shrinkage compensation guarantee.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       5. Interactive Rate Card & Garment Menu
+       ========================================================================= -->
+  <section class="py-5" id="services">
+    <div class="container py-4">
+      <div class="section-header">
+        <span class="section-tag">Transparent Rate Card</span>
+        <h2 class="section-title">Select Garments or Services</h2>
+        <p class="section-desc">
+          Add individual garments below or choose bulk laundry by weight. Add items directly to your bag and watch your invoice update live!
+        </p>
+      </div>
+
+      <!-- Live Search Box -->
+      <div class="catalog-search-box">
+        <i class="bi bi-search search-icon"></i>
+        <input type="text" id="catalog-search" class="form-control" placeholder="Search by garment (e.g. Shirt, Blazer, Saree, Shoes)..." aria-label="Search garments">
+      </div>
+
+      <!-- Category Filter Pills -->
+      <div class="category-filter-nav">
+        <button class="category-filter-btn active" data-category="all">
+          <i class="bi bi-grid-fill"></i> All Items
+        </button>
+        <button class="category-filter-btn" data-category="wash-fold">
+          <i class="bi bi-tsunami"></i> Wash & Fold
+        </button>
+        <button class="category-filter-btn" data-category="wash-iron">
+          <i class="bi bi-layers"></i> Wash & Steam Press
+        </button>
+        <button class="category-filter-btn" data-category="dry-clean">
+          <i class="bi bi-gem"></i> Premium Dry Clean
+        </button>
+        <button class="category-filter-btn" data-category="steam-press">
+          <i class="bi bi-lightning"></i> Steam Press Only
+        </button>
+        <button class="category-filter-btn" data-category="bedding">
+          <i class="bi bi-clouds"></i> Bedding & Linen
+        </button>
+        <button class="category-filter-btn" data-category="shoe-spa">
+          <i class="bi bi-circle-half"></i> Shoe & Leather Spa
+        </button>
+      </div>
+
+      <!-- Dynamic Catalog Grid Rendered by JS -->
+      <div class="row g-4" id="catalog-grid">
+        <!-- Rendered via JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       6. Bulk Weight Wash Estimator (Computation by Weight)
+       ========================================================================= -->
+  <section class="py-5 bg-white border-top border-bottom" id="calculator">
+    <div class="container py-4">
+      <div class="section-header">
+        <span class="section-tag">Quick Wash Calculator</span>
+        <h2 class="section-title">Bulk Laundry by Kilogram (Kg)</h2>
+        <p class="section-desc">
+          Perfect for student hostels, working professionals, and weekly family laundry. Slide the weight, choose your wash preference, and add to bag in 1-click.
+        </p>
+      </div>
+
+      <div class="calculator-card">
+        <div class="row g-5 align-items-center">
+          <!-- Left: Sliders & Type Selection -->
+          <div class="col-lg-7">
+            <!-- Weight Slider -->
+            <div class="mb-4">
+              <div class="d-flex justify-content-between align-items-baseline mb-2">
+                <label for="weight-range" class="fw-bold fs-5 text-dark">Estimated Laundry Weight</label>
+                <div class="d-flex align-items-baseline gap-1">
+                  <span class="weight-slider-val" id="weight-display-val">7</span>
+                  <span class="fw-bold text-muted fs-5">kg</span>
                 </div>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label>Email ID</label>
-                        <input type="email" id="email" placeholder="mail@gmail.com" required>
+              </div>
+              <input type="range" class="form-range custom-range" id="weight-range" min="3" max="25" step="1" value="7">
+              <div class="d-flex justify-content-between text-muted small mt-1">
+                <span>3 kg (Min Load)</span>
+                <span>8 kg (Weekly Solo)</span>
+                <span>15 kg (Family Load)</span>
+                <span>25 kg (Max Load)</span>
+              </div>
+            </div>
+
+            <!-- Service Option Selector -->
+            <div class="mb-4">
+              <label class="form-label mb-2 fw-bold text-dark">Choose Wash Method:</label>
+              <div class="row g-3">
+                <div class="col-md-4">
+                  <div class="calc-option-card selected" data-type="wash-fold">
+                    <input type="radio" name="calcType" id="type-wf" value="wash-fold" checked class="d-none">
+                    <div class="fw-bold text-dark mb-1">Wash & Fold</div>
+                    <div class="text-primary fw-bold font-monospace">₹79 / kg</div>
+                    <small class="text-muted d-block mt-1">Clean, dried & neatly folded into bundle.</small>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="calc-option-card" data-type="wash-iron">
+                    <input type="radio" name="calcType" id="type-wi" value="wash-iron" class="d-none">
+                    <div class="fw-bold text-dark mb-1">Wash & Steam Press</div>
+                    <div class="text-primary fw-bold font-monospace">₹99 / kg</div>
+                    <small class="text-muted d-block mt-1">Crisp steam pressing on every garment.</small>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="calc-option-card" data-type="premium-sanitize">
+                    <input type="radio" name="calcType" id="type-ps" value="premium-sanitize" class="d-none">
+                    <div class="fw-bold text-dark mb-1">Sanitized Care</div>
+                    <div class="text-primary fw-bold font-monospace">₹119 / kg</div>
+                    <small class="text-muted d-block mt-1">Antiseptic rinse + conditioner + press.</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-3 bg-light rounded-3 border d-flex align-items-center gap-3">
+              <i class="bi bi-info-circle-fill text-primary fs-4"></i>
+              <div class="small text-muted">
+                Our valet carries a certified digital weighing scale at pickup. You are billed strictly according to the actual weight measured in front of you.
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Computed Output Box -->
+          <div class="col-lg-5">
+            <div class="calc-summary-panel">
+              <div>
+                <span class="badge bg-light text-dark mb-2" id="calc-rate-badge">₹79/kg (Wash & Fold)</span>
+                <h4>Bulk Wash Estimate</h4>
+
+                <div class="calc-row">
+                  <span>Approx Garment Count:</span>
+                  <strong class="text-white" id="calc-clothes-est">~32 garments</strong>
+                </div>
+                <div class="calc-row">
+                  <span>Turnaround Time:</span>
+                  <strong class="text-white">24 - 48 Hours</strong>
+                </div>
+                <div class="calc-row">
+                  <span>Detergent Tier:</span>
+                  <strong class="text-white">Eco-friendly Liquid</strong>
+                </div>
+                <div class="calc-row">
+                  <span>Pickup & Drop:</span>
+                  <strong class="text-success">Included Free</strong>
+                </div>
+
+                <div class="calc-row total-row">
+                  <span>Estimated Total:</span>
+                  <span class="font-monospace text-warning fs-3" id="calc-price-est">₹553</span>
+                </div>
+              </div>
+
+              <div class="mt-4">
+                <button class="btn btn-lw-primary w-100 py-3" id="btn-add-bulk">
+                  <i class="bi bi-bag-plus me-1"></i> Add Bulk Laundry to Bag
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       7. How It Works
+       ========================================================================= -->
+  <section class="py-5" id="how-it-works">
+    <div class="container py-4">
+      <div class="section-header">
+        <span class="section-tag">Seamless Convenience</span>
+        <h2 class="section-title">How Laundry Wallah Works</h2>
+        <p class="section-desc">
+          Four effortless steps from your doorstep to fresh wardrobe perfection.
+        </p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 border p-4 text-center rounded-4 shadow-sm bg-white">
+            <div class="rounded-circle bg-primary-subtle text-primary d-inline-flex align-items-center justify-content-center mx-auto mb-3" style="width: 64px; height: 64px; font-size: 1.6rem;">
+              <i class="bi bi-phone"></i>
+            </div>
+            <span class="badge bg-light text-muted border mx-auto mb-2 font-monospace">STEP 01</span>
+            <h5 class="fw-bold mb-2">Schedule Online</h5>
+            <p class="text-muted small mb-0">Select your garments or weight load, pick your pickup date and convenient 2-hour slot.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 border p-4 text-center rounded-4 shadow-sm bg-white">
+            <div class="rounded-circle bg-primary-subtle text-primary d-inline-flex align-items-center justify-content-center mx-auto mb-3" style="width: 64px; height: 64px; font-size: 1.6rem;">
+              <i class="bi bi-scooter"></i>
+            </div>
+            <span class="badge bg-light text-muted border mx-auto mb-2 font-monospace">STEP 02</span>
+            <h5 class="fw-bold mb-2">Doorstep Valet Pickup</h5>
+            <p class="text-muted small mb-0">Our uniformed valet collects your laundry in tamper-proof bags and provides a digital barcode slip.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 border p-4 text-center rounded-4 shadow-sm bg-white">
+            <div class="rounded-circle bg-primary-subtle text-primary d-inline-flex align-items-center justify-content-center mx-auto mb-3" style="width: 64px; height: 64px; font-size: 1.6rem;">
+              <i class="bi bi-shield-check"></i>
+            </div>
+            <span class="badge bg-light text-muted border mx-auto mb-2 font-monospace">STEP 03</span>
+            <h5 class="fw-bold mb-2">Specialized Processing</h5>
+            <p class="text-muted small mb-0">Garment sorting, delicate stain treatment, organic detergent wash, and precision steam pressing.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 border p-4 text-center rounded-4 shadow-sm bg-white">
+            <div class="rounded-circle bg-primary-subtle text-primary d-inline-flex align-items-center justify-content-center mx-auto mb-3" style="width: 64px; height: 64px; font-size: 1.6rem;">
+              <i class="bi bi-box2-heart"></i>
+            </div>
+            <span class="badge bg-light text-muted border mx-auto mb-2 font-monospace">STEP 04</span>
+            <h5 class="fw-bold mb-2">Delivered Crisp & Fresh</h5>
+            <p class="text-muted small mb-0">Hung in protective breathable covers or crisp stacked boxes delivered back within 24-48 hours.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       8. Live Order Tracking Simulator
+       ========================================================================= -->
+  <section class="py-5 bg-white border-top border-bottom" id="tracking">
+    <div class="container py-4">
+      <div class="section-header">
+        <span class="section-tag">Live Order Intelligence</span>
+        <h2 class="section-title">Track Your Laundry Order</h2>
+        <p class="section-desc">
+          Enter your Order Reference ID to see real-time processing milestones, assigned rider details, and estimated delivery window.
+        </p>
+      </div>
+
+      <div class="tracking-wrapper">
+        <!-- Input Group -->
+        <div class="track-input-group">
+          <input type="text" id="track-order-id" class="form-control" placeholder="Enter Order ID (e.g. LW-8921)" value="LW-8921" aria-label="Order Tracking ID">
+          <button class="btn btn-lw-primary px-4" id="btn-track-order">
+            <i class="bi bi-search me-1"></i> Track
+          </button>
+        </div>
+
+        <!-- Sample Demo Order Chips -->
+        <div class="track-sample-chips">
+          <span>Try quick demo references:</span>
+          <button type="button" class="sample-chip-btn" data-order-id="LW-8921">LW-8921 (Dry Clean & Press)</button>
+          <button type="button" class="sample-chip-btn" data-order-id="LW-1045">LW-1045 (Bulk Wash 8kg)</button>
+        </div>
+
+        <!-- Dynamic Tracking Result Container -->
+        <div id="tracking-result-box">
+          <!-- Rendered dynamically by script.js -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       9. Booking & Doorstep Scheduling Section (Form Validation & Computation)
+       ========================================================================= -->
+  <section class="booking-section" id="booking">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Doorstep Service</span>
+        <h2 class="section-title">Schedule Pickup & Checkout</h2>
+        <p class="section-desc">
+          Fill in your pickup coordinates. Our trained valet will arrive at your selected slot with a laundry hamper and digital scale.
+        </p>
+      </div>
+
+      <div class="row g-5">
+        <!-- Left: Interactive Form with Strict Client-Side Validation -->
+        <div class="col-lg-7">
+          <div class="booking-form-card">
+            <h4 class="fw-bold mb-4 pb-2 border-bottom text-dark">
+              <i class="bi bi-person-lines-fill text-primary me-2"></i> Pickup Details
+            </h4>
+
+            <form id="laundry-booking-form" novalidate>
+              <!-- Row 1: Name & Phone -->
+              <div class="row g-3 mb-3">
+                <div class="col-md-6">
+                  <label for="customer-name" class="form-label">Full Name <span class="required-star">*</span></label>
+                  <input type="text" class="form-control" id="customer-name" placeholder="e.g. Aryan Anand" required autocomplete="name">
+                  <div class="invalid-feedback">Please enter your full name (at least 3 characters).</div>
+                </div>
+                <div class="col-md-6">
+                  <label for="customer-phone" class="form-label">Mobile Number <span class="required-star">*</span></label>
+                  <div class="input-group">
+                    <span class="input-group-text bg-light">+91</span>
+                    <input type="tel" class="form-control" id="customer-phone" placeholder="98765 43210" maxlength="10" required autocomplete="tel" inputmode="tel">
+                  </div>
+                  <div class="invalid-feedback">Enter a valid 10-digit Indian phone number.</div>
+                </div>
+              </div>
+
+              <!-- Row 2: Email & Pincode -->
+              <div class="row g-3 mb-3">
+                <div class="col-md-7">
+                  <label for="customer-email" class="form-label">Email Address <span class="required-star">*</span></label>
+                  <input type="email" class="form-control" id="customer-email" placeholder="name@example.com" required autocomplete="email">
+                  <div class="invalid-feedback">Please provide a valid email for e-receipt & tracking alerts.</div>
+                </div>
+                <div class="col-md-5">
+                  <label for="customer-pincode" class="form-label">Postal PIN Code <span class="required-star">*</span></label>
+                  <input type="text" class="form-control" id="customer-pincode" placeholder="e.g. 110001" maxlength="6" required autocomplete="postal-code" inputmode="numeric">
+                  <div class="invalid-feedback">Enter a valid 6-digit Indian PIN code.</div>
+                  <div id="pincode-status" class="mt-1"></div>
+                </div>
+              </div>
+
+              <!-- Row 3: Full Address -->
+              <div class="mb-3">
+                <label for="customer-address" class="form-label">Complete Doorstep Address <span class="required-star">*</span></label>
+                <textarea class="form-control" id="customer-address" rows="2" placeholder="Flat / House No, Building, Street name, Landmark..." required autocomplete="street-address"></textarea>
+                <div class="invalid-feedback">Please enter your complete pickup address with landmark.</div>
+              </div>
+
+              <!-- Row 4: Pickup Date & Time Slot -->
+              <div class="row g-3 mb-4">
+                <div class="col-md-5">
+                  <label for="pickup-date" class="form-label">Pickup Date <span class="required-star">*</span></label>
+                  <input type="date" class="form-control" id="pickup-date" required>
+                  <div class="invalid-feedback">Please pick a valid pickup date.</div>
+                </div>
+                <div class="col-md-7">
+                  <label class="form-label">Preferred Time Slot <span class="required-star">*</span></label>
+                  <div class="slot-grid">
+                    <div>
+                      <input type="radio" name="pickupSlot" id="slot-1" value="07:00 AM - 09:00 AM" class="slot-radio-input" checked>
+                      <label for="slot-1" class="slot-radio-label">7 AM - 9 AM</label>
                     </div>
-                    <div class="form-group">
-                        <label>Phone Number</label>
-                        <input type="tel" id="phone" placeholder="your number">
+                    <div>
+                      <input type="radio" name="pickupSlot" id="slot-2" value="09:00 AM - 11:00 AM" class="slot-radio-input">
+                      <label for="slot-2" class="slot-radio-label">9 AM - 11 AM</label>
                     </div>
+                    <div>
+                      <input type="radio" name="pickupSlot" id="slot-3" value="01:00 PM - 03:00 PM" class="slot-radio-input">
+                      <label for="slot-3" class="slot-radio-label">1 PM - 3 PM</label>
+                    </div>
+                    <div>
+                      <input type="radio" name="pickupSlot" id="slot-4" value="05:00 PM - 07:00 PM" class="slot-radio-input">
+                      <label for="slot-4" class="slot-radio-label">5 PM - 7 PM</label>
+                    </div>
+                    <div>
+                      <input type="radio" name="pickupSlot" id="slot-5" value="07:00 PM - 09:00 PM" class="slot-radio-input">
+                      <label for="slot-5" class="slot-radio-label">7 PM - 9 PM</label>
+                    </div>
+                  </div>
+                  <div class="invalid-feedback d-none" id="slot-feedback">Please choose a preferred pickup slot.</div>
                 </div>
-                <button class="btn-booknow" onclick="bookNow()">Book now</button>
-                <div class="success-msg" id="success-msg"> Thank you For Booking the Service We will get back to you soon!</div>
+              </div>
+
+              <!-- Delivery Speed & Add-ons -->
+              <div class="p-3 bg-light rounded-3 border mb-4">
+                <h6 class="fw-bold mb-2 text-dark">Turnaround Speed</h6>
+                <div class="d-flex flex-wrap gap-3 mb-3">
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="deliverySpeed" id="speed-std" value="standard" checked>
+                    <label class="form-check-label fw-semibold" for="speed-std">
+                      Standard Care (48-72h) — <span class="text-success">Free over ₹299</span>
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="deliverySpeed" id="speed-exp" value="express">
+                    <label class="form-check-label fw-semibold" for="speed-exp">
+                      ⚡ 24hr Express Delivery — <span class="text-primary font-monospace">+₹99</span>
+                    </label>
+                  </div>
+                </div>
+
+                <h6 class="fw-bold mb-2 text-dark">Optional Care Add-ons</h6>
+                <div class="row g-2">
+                  <div class="col-sm-6">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="addon-fragrance">
+                      <label class="form-check-label small" for="addon-fragrance">
+                        🌸 Fragrance Booster & Softener (+₹19)
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="addon-sanitizer">
+                      <label class="form-check-label small" for="addon-sanitizer">
+                        🛡️ Anti-bacterial & Mite Disinfectant (+₹29)
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Special Instructions -->
+              <div class="mb-4">
+                <label for="special-instructions" class="form-label">Specific Garment Care Instructions (Optional)</label>
+                <textarea class="form-control" id="special-instructions" rows="2" placeholder="e.g. Starched collar on white shirts, gentle press on saree border, stubborn coffee stain on trousers..."></textarea>
+              </div>
+
+              <!-- Payment Mode -->
+              <div class="mb-4">
+                <label class="form-label fw-bold text-dark">Payment Preference</label>
+                <div class="d-flex flex-wrap gap-4">
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="paymentMethod" id="pay-cod" value="Cash / UPI on Delivery" checked>
+                    <label class="form-check-label fw-semibold" for="pay-cod">
+                      <i class="bi bi-cash-stack text-success me-1"></i> Cash / UPI on Delivery
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="paymentMethod" id="pay-online" value="Prepaid Online (Credit/Debit/Netbanking)">
+                    <label class="form-check-label fw-semibold" for="pay-online">
+                      <i class="bi bi-credit-card text-primary me-1"></i> Pay Online Gateway
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Submit Button -->
+              <button type="submit" class="btn btn-lw-primary w-100 py-3 fs-6">
+                <i class="bi bi-check2-circle me-1"></i> Confirm & Schedule Doorstep Pickup
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Right: Real-time Order Summary Card -->
+        <div class="col-lg-5">
+          <div class="order-summary-sticky">
+            <div class="d-flex justify-content-between align-items-center mb-3 pb-2 border-bottom">
+              <h5 class="fw-bold mb-0 text-dark">
+                <i class="bi bi-receipt text-primary me-2"></i> Order Summary
+              </h5>
+              <button class="btn btn-sm btn-outline-primary" data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas">
+                <i class="bi bi-pencil"></i> Edit Items
+              </button>
             </div>
-        </div>
-    </section>
 
-    <!-- QUALITY -->
-    <section class="quality-section">
-        <div class="quality-card">
-            <div class="quality-icon">✨</div>
-            <h4>Premium Services</h4>
-            <p>Elevate your wardrobe with our meticulous dry cleaning, ensuring garments look and feel as good as new.</p>
-        </div>
-        <div class="quality-card">
-            <div class="quality-icon">🎧</div>
-            <h4>Quick Support</h4>
-            <p>We're committed to providing great solutions to ensure your experience is smooth and worry-free.</p>
-        </div>
-        <div class="quality-card">
-            <div class="quality-icon">🚚</div>
-            <h4>Hassle Free Delivery</h4>
-            <p>Enjoy seamless service with our convenient pickup and delivery options, tailored to your schedule.</p>
-        </div>
-        <div class="quality-card">
-            <div class="quality-icon">💰</div>
-            <h4>Affordable Prices</h4>
-            <p>Experience exceptional care without breaking the bank — our affordable prices make laundry day stress-free.</p>
-        </div>
-    </section>
-
-    <!-- NEWSLETTER -->
-    <section class="newsletter">
-        <div class="newsletter-inner">
-            <h2>Subscribe to our newsletter.</h2>
-            <div class="newsletter-form">
-                <input type="text" placeholder="Full name">
-                <input type="email" placeholder="Email">
-                <button class="btn-subscribe">Subscribe</button>
+            <!-- Itemized List -->
+            <div class="summary-items-list" id="booking-summary-items">
+              <!-- Rendered via JS -->
             </div>
-        </div>
-    </section>
 
-    <!-- FOOTER -->
-    <footer>
-        <div class="footer-inner">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <span class="nav-logo">Laundry Wallah</span>
-                    <p>Laundry Wallah committed to your service and experience.</p>
-                    <div class="social-icons">📷 📘 🐦 ▶️</div>
-                </div>
-                <div class="footer-col">
-                    <h4>Important Links</h4>
-                    <ul>
-                        <li><a href="#">About us</a></li>
-                        <li><a href="#">Contact us</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms of use</a></li>
-                        <li><a href="#">Refund Policy</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Contact</h4>
-                    <p>laundrywallah@gmail.com</p>
-                    <p>+91 91234 56780</p>
-                </div>
-                <div class="footer-col">
-                    <h4>Follow Us</h4>
-                    <div class="social-icons">📷 📘 🐦 ▶️</div>
-                </div>
+            <!-- Coupon Input -->
+            <div class="promo-input-group">
+              <input type="text" class="form-control form-control-sm" id="coupon-code-input" placeholder="Promo Code (FIRSTWASH)">
+              <button class="btn btn-dark btn-sm px-3" type="button" id="btn-apply-coupon">Apply</button>
             </div>
-            <div class="footer-bottom">© 2026 Laundry Wallah. All rights reserved.</div>
-        </div>
-    </footer>
+            <div id="coupon-feedback"></div>
 
-    <script src="script.js"></script>
+            <!-- Computational Totals Table -->
+            <div class="pt-3 border-top mt-3">
+              <div class="d-flex justify-content-between py-1 small">
+                <span class="text-muted">Items Subtotal:</span>
+                <span class="fw-bold font-monospace" id="summary-subtotal">₹0</span>
+              </div>
+              <div class="d-flex justify-content-between py-1 small">
+                <span class="text-muted">Doorstep Delivery:</span>
+                <span class="fw-semibold text-success font-monospace" id="summary-delivery">₹0</span>
+              </div>
+              <div class="d-flex justify-content-between py-1 small">
+                <span class="text-muted">Add-on Treatments:</span>
+                <span class="fw-semibold font-monospace" id="summary-addons">₹0</span>
+              </div>
+              <div class="d-flex justify-content-between py-1 small d-none text-success" id="summary-discount-row">
+                <span>Promo Discount:</span>
+                <span class="fw-bold font-monospace" id="summary-discount">-₹0</span>
+              </div>
+              <div class="d-flex justify-content-between py-1 small">
+                <span class="text-muted">GST & Service Tax (5%):</span>
+                <span class="fw-semibold font-monospace" id="summary-tax">₹0</span>
+              </div>
+              <div class="d-flex justify-content-between pt-2 border-top mt-2 fs-5">
+                <span class="fw-bold text-dark">Total Amount:</span>
+                <span class="fw-bold text-primary font-monospace" id="summary-total">₹0</span>
+              </div>
+            </div>
+
+            <div class="alert alert-info py-2 px-3 small mt-3 mb-0 d-flex align-items-center gap-2">
+              <i class="bi bi-shield-check fs-5 text-primary"></i>
+              <span>Guaranteed on-time pickup. No hidden packing or surge fees.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       10. Customer Reviews & Ratings
+       ========================================================================= -->
+  <section class="py-5 bg-white border-top border-bottom">
+    <div class="container py-4">
+      <div class="section-header">
+        <span class="section-tag">Happy Wardrobes</span>
+        <h2 class="section-title">What Our Customers Say</h2>
+        <p class="section-desc">Over 12,000 households trust Laundry Wallah for their delicate ethnic wear, suits, and daily laundry.</p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="testimonial-card">
+            <div class="rating-stars">
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+            </div>
+            <p class="mb-0 text-muted" style="font-size:0.925rem;">
+              "Sent my expensive Banarasi silk saree and sherwani for dry cleaning before wedding season. They returned it in pristine garment bags with zero scent of harsh chemicals. Exceptional service!"
+            </p>
+            <div class="client-meta">
+              <div class="client-avatar">RK</div>
+              <div>
+                <h6 class="fw-bold mb-0 text-dark">Rohit Kapoor</h6>
+                <small class="text-muted">South Extension, Delhi • Verified User</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="testimonial-card">
+            <div class="rating-stars">
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+            </div>
+            <p class="mb-0 text-muted" style="font-size:0.925rem;">
+              "The per-kg bulk wash estimator is a lifesaver for working professionals. Valet arrived exactly on time with a digital scale, and clothes returned next day crisp, scented, and folded neatly."
+            </p>
+            <div class="client-meta">
+              <div class="client-avatar">SN</div>
+              <div>
+                <h6 class="fw-bold mb-0 text-dark">Sneha Nambiar</h6>
+                <small class="text-muted">Koramangala, Bengaluru • Verified User</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="testimonial-card">
+            <div class="rating-stars">
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-half"></i>
+            </div>
+            <p class="mb-0 text-muted" style="font-size:0.925rem;">
+              "Tried their Sneaker Spa for my white Jordan sneakers that had tough monsoon mud stains. They look brand new! Live order tracking simulator kept me updated at each stage."
+            </p>
+            <div class="client-meta">
+              <div class="client-avatar">AM</div>
+              <div>
+                <h6 class="fw-bold mb-0 text-dark">Aman Mehta</h6>
+                <small class="text-muted">Bandra West, Mumbai • Verified User</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       11. Frequently Asked Questions (Accordion)
+       ========================================================================= -->
+  <section class="py-5" id="faq">
+    <div class="container py-4">
+      <div class="section-header">
+        <span class="section-tag">Got Questions?</span>
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-desc">Everything you need to know about our garment care, pickup logistics, and pricing.</p>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="accordion faq-accordion" id="faqAccordion">
+            <!-- Q1 -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  How does the Doorstep Pickup & Delivery work?
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  Once you submit your booking, a trained Laundry Wallah valet is dispatched with sanitized laundry bags to your address during your selected 2-hour slot. For per-kg bulk laundry, the valet weighs your clothes in front of you using an electronic hanging scale and provides an instant digital barcode receipt.
+                </div>
+              </div>
+            </div>
+
+            <!-- Q2 -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  Are my clothes washed together with other customers' clothes?
+                </button>
+              </h2>
+              <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  <strong>Never.</strong> We adhere to a strict hygienic segregation policy. Each customer's garments are processed in a dedicated, isolated washing drum. We also use ozone-sanitized rinse cycles to eliminate 99.9% of germs and bacteria.
+                </div>
+              </div>
+            </div>
+
+            <!-- Q3 -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  What is your turnaround time for express laundry?
+                </button>
+              </h2>
+              <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  Our standard turnaround is 48 hours. If you need urgent delivery, you can select our <strong>24-hour Express Delivery</strong> option during booking for just +₹99. Your clothes will be prioritized, washed, pressed, and delivered the very next day.
+                </div>
+              </div>
+            </div>
+
+            <!-- Q4 -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingFour">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                  How do you handle delicate silks, zari, and wedding lehengas?
+                </button>
+              </h2>
+              <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  Delicate fabrics undergo inspection by our fabric masters. We use zero-water hydrocarbon dry cleaning fluids that do not cause shrinkage, dullness, or metallic tarnishing on silver/gold zari. Garments are hand-finished on padded forms and delivered in breathable protective covers.
+                </div>
+              </div>
+            </div>
+
+            <!-- Q5 -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingFive">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                  What payment methods are supported?
+                </button>
+              </h2>
+              <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  We support Cash on Delivery (COD), UPI (Google Pay, PhonePe, Paytm QR shown by valet upon drop-off), Debit/Credit Cards, and Net Banking through our secure payment gateway.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       12. Footer
+       ========================================================================= -->
+  <footer class="lw-footer">
+    <div class="container">
+      <div class="row g-4">
+        <!-- Col 1: Brand Info -->
+        <div class="col-lg-4 col-md-6">
+          <div class="d-flex align-items-center gap-2 mb-3">
+            <div class="brand-icon-box" style="width:36px; height:36px; font-size:1.1rem;">
+              <i class="bi bi-water"></i>
+            </div>
+            <span class="fs-4 fw-bold text-white">Laundry <span class="brand-highlight">Wallah</span></span>
+          </div>
+          <p class="small text-muted mb-4">
+            India's premier garment care, dry cleaning and doorstep laundry network. We make keeping your wardrobe pristine, fresh, and hygienic effortless.
+          </p>
+          <div class="d-flex gap-3">
+            <a href="#" class="btn btn-outline-light btn-sm rounded-circle" style="width:36px; height:36px; display:inline-flex; align-items:center; justify-content:center;"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="btn btn-outline-light btn-sm rounded-circle" style="width:36px; height:36px; display:inline-flex; align-items:center; justify-content:center;"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="btn btn-outline-light btn-sm rounded-circle" style="width:36px; height:36px; display:inline-flex; align-items:center; justify-content:center;"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" class="btn btn-outline-light btn-sm rounded-circle" style="width:36px; height:36px; display:inline-flex; align-items:center; justify-content:center;"><i class="bi bi-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <!-- Col 2: Services List -->
+        <div class="col-lg-2 col-md-6">
+          <h5>Services</h5>
+          <ul>
+            <li><a href="#services">Wash & Fold</a></li>
+            <li><a href="#services">Wash & Steam Iron</a></li>
+            <li><a href="#services">Premium Dry Cleaning</a></li>
+            <li><a href="#services">Steam Press Only</a></li>
+            <li><a href="#services">Bedding & Curtains</a></li>
+            <li><a href="#services">Shoe & Sneaker Spa</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Coverage Hubs -->
+        <div class="col-lg-3 col-md-6">
+          <h5>Service Hubs</h5>
+          <ul>
+            <li><a href="#">Delhi NCR (Noida, Gurugram, Delhi)</a></li>
+            <li><a href="#">Mumbai (South Mumbai, Bandra, Andheri)</a></li>
+            <li><a href="#">Bengaluru (Koramangala, Indiranagar, HSR)</a></li>
+            <li><a href="#">Hyderabad (Gachibowli, Jubilee Hills)</a></li>
+            <li><a href="#">Pune (Kalyani Nagar, Kothrud, Hinjewadi)</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Contact & Help -->
+        <div class="col-lg-3 col-md-6">
+          <h5>Customer Care</h5>
+          <p class="small text-muted mb-2">Need assistance with your booking or status?</p>
+          <p class="mb-1"><i class="bi bi-telephone text-primary me-2"></i><strong class="text-white">+91 98765 43210</strong></p>
+          <p class="mb-1"><i class="bi bi-envelope text-primary me-2"></i><span class="text-light">care@laundrywallah.com</span></p>
+          <p class="small text-muted mt-3">Operating Hours: Mon - Sun (7:00 AM - 10:00 PM)</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom d-flex flex-wrap justify-content-between align-items-center">
+        <p class="mb-0 text-muted small">© 2026 Laundry Wallah Garment Care Services Pvt. Ltd. All rights reserved.</p>
+        <div class="d-flex gap-3 small">
+          <a href="#" class="text-muted text-decoration-none">Terms of Service</a>
+          <a href="#" class="text-muted text-decoration-none">Privacy Policy</a>
+          <a href="#" class="text-muted text-decoration-none">Fabric Care Guarantee</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       13. Offcanvas Cart Drawer
+       ========================================================================= -->
+  <div class="offcanvas offcanvas-end lw-offcanvas" tabindex="-1" id="cartOffcanvas" aria-labelledby="cartOffcanvasLabel">
+    <div class="offcanvas-header">
+      <div class="d-flex align-items-center gap-2">
+        <i class="bi bi-bag-check-fill text-primary fs-4"></i>
+        <h5 class="offcanvas-title fw-bold text-dark" id="cartOffcanvasLabel">Your Laundry Bag</h5>
+      </div>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+
+    <div class="offcanvas-body d-flex flex-column justify-content-between">
+      <div>
+        <table class="table cart-table">
+          <thead>
+            <tr>
+              <th>Garment / Service</th>
+              <th class="text-center">Qty</th>
+              <th class="text-end">Total</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="cart-table-body">
+            <!-- Rendered dynamically by script.js -->
+          </tbody>
+        </table>
+      </div>
+
+      <div class="pt-3 border-top mt-3">
+        <div class="d-flex justify-content-between mb-1 small">
+          <span class="text-muted">Subtotal:</span>
+          <span class="fw-bold font-monospace" id="offcanvas-subtotal">₹0</span>
+        </div>
+        <div class="d-flex justify-content-between mb-1 small">
+          <span class="text-muted">Estimated Delivery:</span>
+          <span class="fw-semibold text-success font-monospace" id="offcanvas-delivery">Free</span>
+        </div>
+        <div class="d-flex justify-content-between mb-3 fs-5 border-top pt-2">
+          <span class="fw-bold text-dark">Estimated Total:</span>
+          <span class="fw-bold text-primary font-monospace" id="offcanvas-total">₹0</span>
+        </div>
+
+        <a href="#booking" class="btn btn-lw-primary w-100 py-3" data-bs-dismiss="offcanvas">
+          <i class="bi bi-arrow-right-circle me-1"></i> Proceed to Doorstep Schedule
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       14. Mobile Sticky Bottom Action Bar
+       ========================================================================= -->
+  <div class="mobile-bottom-bar">
+    <div>
+      <small class="text-muted d-block" style="font-size:0.75rem;">Total in Bag</small>
+      <span class="fw-bold text-dark fs-5 font-monospace" id="mobile-cart-total">₹0</span>
+    </div>
+    <button class="btn btn-lw-primary px-4 py-2" data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas">
+      <i class="bi bi-bag me-1"></i> View Bag & Book
+    </button>
+  </div>
+
+  <!-- =========================================================================
+       15. Order Confirmation Receipt Modal
+       ========================================================================= -->
+  <div class="modal fade" id="orderConfirmationModal" tabindex="-1" aria-labelledby="orderConfirmationModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content border-0 shadow-lg rounded-4 overflow-hidden">
+        <div class="modal-header bg-success text-white py-3">
+          <div class="d-flex align-items-center gap-2">
+            <i class="bi bi-check-circle-fill fs-4"></i>
+            <h5 class="modal-title fw-bold" id="orderConfirmationModalLabel">Pickup Scheduled Successfully!</h5>
+          </div>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <div class="modal-body p-4">
+          <div class="text-center mb-4">
+            <div class="badge bg-success-subtle text-success border border-success-subtle px-3 py-2 fs-6 mb-2">
+              Order ID: <strong id="modal-order-id">LW-0000</strong>
+            </div>
+            <h4 class="fw-bold text-dark">Thank you, <span id="modal-customer-name">Customer</span>!</h4>
+            <p class="text-muted small">
+              A confirmation WhatsApp & SMS receipt has been dispatched. Our valet will arrive with a hamper bag at your chosen slot.
+            </p>
+          </div>
+
+          <!-- Order Summary Details Grid -->
+          <div class="row g-3 p-3 bg-light rounded-3 border mb-4">
+            <div class="col-sm-6">
+              <small class="text-muted d-block">Pickup Window</small>
+              <strong class="text-dark" id="modal-pickup-time">Today</strong>
+            </div>
+            <div class="col-sm-6">
+              <small class="text-muted d-block">Service Speed</small>
+              <strong class="text-dark" id="modal-delivery-speed">Standard 48h</strong>
+            </div>
+            <div class="col-sm-6">
+              <small class="text-muted d-block">Payment Mode</small>
+              <strong class="text-dark" id="modal-pay-mode">Cash / UPI on Delivery</strong>
+            </div>
+            <div class="col-sm-6">
+              <small class="text-muted d-block">Total Payable</small>
+              <strong class="text-primary font-monospace fs-5" id="modal-total-paid">₹0</strong>
+            </div>
+          </div>
+
+          <!-- Itemized Breakdown Table in Modal -->
+          <h6 class="fw-bold mb-2 text-dark">Garment Receipt</h6>
+          <div class="table-responsive">
+            <table class="table table-sm table-bordered">
+              <thead class="table-light">
+                <tr>
+                  <th>Garment / Service</th>
+                  <th class="text-center">Quantity</th>
+                  <th class="text-end">Amount</th>
+                </tr>
+              </thead>
+              <tbody id="modal-items-tbody">
+                <!-- Rendered dynamically -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="modal-footer bg-light border-top d-flex justify-content-between">
+          <button type="button" class="btn btn-outline-secondary" onclick="window.print()">
+            <i class="bi bi-printer me-1"></i> Print Receipt
+          </button>
+          <div class="d-flex gap-2">
+            <button type="button" class="btn btn-outline-primary" id="btn-modal-track-now">
+              <i class="bi bi-geo-alt me-1"></i> Track Order Now
+            </button>
+            <button type="button" class="btn btn-lw-primary" data-bs-dismiss="modal">
+              Done
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       16. Toast Container
+       ========================================================================= -->
+  <div class="toast-container position-fixed bottom-0 end-0 p-3" id="toast-placement">
+    <!-- Toasts injected dynamically by script.js -->
+  </div>
+
+  <!-- Bootstrap 5.3.3 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+  <!-- Interactive Logic -->
+  <script src="script.js"></script>
 </body>
 </html>
