@@ -9,7 +9,7 @@
 
 The original repository was incomplete (with files truncated mid-line at `index.html` line 75, `script.js` line 29, and `style.css` line 95). This upgraded edition completely transforms the project into a **production-ready, high-converting commercial garment care web application**:
 
-1. **Crafted Commercial UI/UX (Zero "Generic AI" Look)**:
+1. **Crafted Commercial UI/UX (Zero "Generic " Look)**:
    - **Bespoke Palette**: Deep Slate Navy (`#0F172A`), Crisp Royal Sapphire (`#1D4ED8`), Sky Fresh Blue (`#0284C7`), and Emerald Eco-Green (`#059669`).
    - **Clean Typography**: Scaled with Google Fonts (`Plus Jakarta Sans`), tabular numerals for monetary clarity, and clear visual hierarchy.
    - **Micro-Interactions**: Ambient glassmorphism badges, animated cart counters, active category filters, and smooth transition states.
